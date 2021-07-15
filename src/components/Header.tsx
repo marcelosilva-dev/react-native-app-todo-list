@@ -9,22 +9,17 @@ interface HeaderProps {
 }
 
 export function Header({ tasksCounter }: HeaderProps) {
-  const tasksCounterText =
-    tasksCounter > 0 ? (tasksCounter === 1 ? "tarefa" : "tarefas") : "";
+  const tasksCounterText = tasksCounter === 1 ? "tarefa" : "tarefas";
 
   return (
     <View style={styles.container}>
       <Image source={logoImg} />
 
       <View style={styles.tasks}>
-        {tasksCounter > 0 ? (
-          <>
-            <Text style={styles.tasksCounter}>Você tem </Text>
-            <Text style={styles.tasksCounterBold}>
-              {tasksCounter} {tasksCounterText}
-            </Text>
-          </>
-        ) : null}
+        <Text style={styles.tasksCounter}>Você tem </Text>
+        <Text style={styles.tasksCounterBold}>
+          {tasksCounter} {tasksCounterText}
+        </Text>
       </View>
     </View>
   );
